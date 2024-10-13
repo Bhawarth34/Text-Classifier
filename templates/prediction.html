@@ -27,15 +27,15 @@
         <div class="card shadow">
             <div class="card-body">
             <h5 class="card-title">Predicted Title</h5>
-                 According to the model this text classifies under the category of {{ prediction }}.
+                According to the model this text classifies under the category of <strong>{{ prediction }}</strong>.
             </div>
         </div>
         <div class="mb-3"></div>
         <div class="card shadow">
             <div class="card-body">
             <h5 class="card-title">Text Sentiment</h5>
-                 According to the model this text gives out {{ sentimentTitle }} impact.
-                <input type="range" class="form-range" value="sentimentVal" disabled id="sentimentRange">
+                According to the model this text gives out {%if sentimentTitle == 'neg' %} <strong>Negative</strong> {%endif%} {%if sentimentTitle == 'neu' %} <strong>Neutral</strong> {%endif%} {%if sentimentTitle == 'pos' %} <strong>Positive</strong> {%endif%} impact.
+                <input type="range" class="form-range" value= {{sentimentVal*100}} disabled id="sentimentRange">
             </div>
         </div>
     </div>
